@@ -4,6 +4,8 @@ _$ sudo apt-get update_
 _$ sudo apt-get install docker-ce docker-ce-cli 
 containerd.io docker-compose-plugin_
 
+_$ sudo apt-get install docker-compose_
+
 _$ git clone https://github.com/Max2288/greenatom_hard_test_
 
 # How run
@@ -11,13 +13,12 @@ Add .env file with your data
 
 Go to folder with project and run commands:
 
-- _$ chmod +x init.sh_
 
-- _$ chmod +x start.sh_
+- _$ docker volume create grafana_data_
 
-- _$ ./init.sh_
+- _$ docker-compose build_
 
-- _$ ./start.sh_
+- _$ docker-compose up_
 
 # After start
 Project runs up three docker containers: database, greenatom, grafana.
@@ -98,4 +99,4 @@ To run grafana on device:
 ## Don't start project twice without deliting volumes _(grafana container depends on main file)_
 ## If you want to do it run commands:
 - _$ docker compose down --volumes_
-- _$ ./start.sh_
+- _$ docker-compose up_
