@@ -17,6 +17,8 @@ services:
       - ${DB_PORT}:5432
     networks:
       - app-tier
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     healthcheck:
       test: ["CMD", "pg_isready"]
       interval: 1s
@@ -31,6 +33,8 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       DATABASE: ${DATABASE}
       DB_USER: ${DB_USER}
@@ -48,6 +52,8 @@ services:
     depends_on:
       greenatom:
         condition: "service_completed_successfully"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
