@@ -4,7 +4,7 @@ _$ sudo apt-get update_
 _$ sudo apt-get install docker-ce docker-ce-cli 
 containerd.io docker-compose-plugin_
 
-_$ sudo apt-get install docker-compose_
+_$ sudo apt-get install docker-compose (docker-compose version 1.29.2 needed)_
 
 _$ git clone https://github.com/Max2288/greenatom_hard_test_
 
