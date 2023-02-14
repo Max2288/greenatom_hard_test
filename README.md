@@ -95,7 +95,7 @@ To run grafana on device:
     DB_PORT - database port
 
 # Recommended
-## Don't start project twice without deliting containers _(grafana container depends on database)_
+## Don't start project twice without deliting volumes _(grafana container depends on main file)_
 ## If you want to do it run commands:
 - _$ docker compose down --volumes_
 - _$ ./start.sh_
